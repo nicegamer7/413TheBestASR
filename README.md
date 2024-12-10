@@ -35,7 +35,7 @@ for image in os.listdir(folder_path):
 ```
 Finally, we have a dataset of 10000 data points, with spectrograms as inputs and sentences as labels. The images were transformed and resized to 128x128 tensors, suitable for CNN training.
 
-On the other han, since we are working with RNN, the sentences were converted to indices by first constructing a vocabulary object, then tokenizing the target sentences. For this step and the collate batch step, we referred to Lab 10's code.
+On the other hand, since we are working with RNN, the sentences were converted to indices by first constructing a vocabulary object, then tokenizing the target sentences. For this step and the collate batch step, we referred to Lab 10's code.
 
 ## Model Architecture
 We first created an ASR class, which represents the object model that will be trained and evaluated in this project. Appropriate layer objects such as nn.Conv2d, nn.RNN, nn.ReLu or nn.MaxPool were incorporated such that the ASR class accurately portrays our model architecture. 
@@ -43,7 +43,7 @@ We first created an ASR class, which represents the object model that will be tr
 ## Accuracy and Decoder
 A Greedy Decoder was implemented to decode the output indices to readable text. This function was also used to compute the accuracy between the decoded output and our targeted sentences. We followed the implementation of the GreedyDecoder function from this source: https://www.assemblyai.com/blog/end-to-end-speech-recognition-pytorch/.
 
-Lastly, the compute word accuacy function compute_Wacc utilized the wer function from jiwer library to generate a word error rate value, helping us with the quantitative evaluation of our model.
+Lastly, the compute word accuracy function compute_Wacc utilized the wer function from jiwer library to generate a word error rate value, helping us with the quantitative evaluation of our model.
 ```python
 def compute_Wacc(output, labels, label_lengths):
     # Decode the predictions
