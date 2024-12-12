@@ -35,7 +35,7 @@ for image in os.listdir(folder_path):
 ```
 Finally, we have a dataset of 10000 data points, with spectrograms as inputs and sentences as labels. The images were transformed and resized to 128x128 tensors, suitable for CNN training.
 
-On the other hand, since we are working with RNN, the sentences were converted to indices by first constructing a vocabulary object, then tokenizing the target sentences. For this step and the collate batch step, we referred to Lab 10's code.
+On the other hand, since we are working with RNN, the sentences were converted to indices by first constructing a vocabulary object, then tokenizing the target sentences. For this step and the collate batch step, we referred to Lab 10's code and followed the implementation of the data_processing function from the source https://www.assemblyai.com/blog/end-to-end-speech-recognition-pytorch/ to prepare the spectogram and target data.
 
 ## Model Architecture
 We first created an ASR class, which represents the object model that will be trained and evaluated in this project. Appropriate layer objects such as nn.Conv2d, nn.RNN, nn.ReLu or nn.MaxPool were incorporated such that the ASR class accurately portrays our model architecture. 
