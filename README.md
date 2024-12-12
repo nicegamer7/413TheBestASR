@@ -4,11 +4,11 @@ This project explores the use of CRNN model to generate transcripts of English s
 
 ## Table of Contents
 - [**Requirements**](#requirements)
-- [**Audio preprocessing**](#audio)
-- [**Data preparation**](#data)
-- [**Model Architecture**](#model)
-- [**Accuracy and Decoder**](#accuracy)
-- [**Training**](#train)
+- [**Audio preprocessing**](#audio-preprocessing)
+- [**Data preparation**](#data-preparation)
+- [**Model Architecture**](#model-architecture)
+- [**Accuracy and Decoder**](#accuracy-and-decoder)
+- [**Training**](#training)
 
 ## Requirements
 The dependencies needed for this project are:
@@ -23,6 +23,9 @@ The dependencies needed for this project are:
 pip install matplotlib librosa numpy pandas torch==1.11.0 torchvision==0.12.0 torchtext==0.12.0 jiwer
 ```
 ## Audio preprocessing
+Audio files are preprocessed to convert them into mel-spectrograms. Each file is loaded using `torchaudio`, then converted to mel-spectrograms using PyTorch's built-in transformation.
+These mel-spectrograms are then plotted using `matplotlib` and saved as PNG files. Some experimentation was needed to determine the best parameters to pass to PyTorch's transformation.
+The parameters were chosen to produce high quality images, as the default parameters produced images that were blocky. The code is located in `convert.py`.
 ## Data preparation
 A subset of data from the original dataset are converted into a pandas dataframe. Then, the spectrograms are mapped with their corresponding sentences by matching the file names.
 ```python
